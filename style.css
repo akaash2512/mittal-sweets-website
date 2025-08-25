@@ -284,7 +284,8 @@ section {
         margin-left: 0;
         margin-right: 0;
         width: 100%;
-        padding-bottom: 40px; /* Adds space above the bottom of the screen */
+        padding-top: 50px;
+        padding-bottom: 10px; /* Adds space above the bottom of the screen */
     }
 
     .header-container {
@@ -308,6 +309,11 @@ section {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        padding: 20px 0;
+    }
+
+    .site-header nav ul li {
+        margin-bottom: 10px; /* Adds space between each list item */
     }
 
     .site-header nav a {
