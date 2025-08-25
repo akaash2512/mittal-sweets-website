@@ -94,17 +94,11 @@
         <p>&copy; 2025 The Mittal Sweets. All Rights Reserved.</p>
     </div>
 </footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuButton = document.querySelector('.hamburger-menu');
-        const navMenu = document.querySelector('.site-header nav');
-
-        menuButton.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    });
-</script>
-
+<button id="to-top-btn" aria-label="Go to top of page">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+</button>
+<script src="script.js" defer></script>
 </body>
 </html>

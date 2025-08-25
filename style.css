@@ -7,6 +7,10 @@
     --font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-family);
     line-height: 1.6;
@@ -51,7 +55,6 @@ body {
     width: 90px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid var(--primary-color);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -215,6 +218,40 @@ section {
     padding: 1.5rem 0;
     font-size: 0.9rem;
 }
+
+
+#to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#to-top-btn.show-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+#to-top-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
 
 /* ===============================
     MOBILE-FIRST RESPONSIVE STYLES
