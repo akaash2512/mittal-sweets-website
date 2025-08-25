@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mittal Sweets, Bakery & Snacks</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -14,6 +17,11 @@
             <img src="images/logo.jpg" alt="The Mittal Sweets Logo">
             <h1>Mittals Sweets, Bakery and Snacks</h1>
         </div>
+        <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="#about">About Us</a></li>
@@ -86,6 +94,17 @@
         <p>&copy; 2025 The Mittal Sweets. All Rights Reserved.</p>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.site-header nav');
+
+        menuButton.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
 
 </body>
 </html>

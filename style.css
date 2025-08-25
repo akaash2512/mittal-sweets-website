@@ -1,10 +1,10 @@
 :root {
     --primary-color: #2E3A4E;
     --secondary-color: #F8F8F8;
-    --accent-color: #DAA520;
+    --accent-color: #FFC000;
     --text-color: #333;
     --light-text-color: #F0F0F0;
-    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -34,6 +34,11 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative; /* Needed for absolute positioning of the nav menu */
+}
+
+.hamburger-menu {
+    display: none;
 }
 
 .logo {
@@ -217,6 +222,11 @@ section {
 */
 
 @media (max-width: 768px) {
+
+    main {
+        padding-top: 100px; /* Adjust this value to match the height of your header */
+    }
+
     /* Replaces the desktop banner image with the mobile banner image */
     .hero-section {
         background-image: url('images/hero_background_mobile.png');
@@ -240,10 +250,21 @@ section {
         padding-bottom: 40px; /* Adds space above the bottom of the screen */
     }
 
-    /* Makes the header items stack vertically */
     .header-container {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between; /* This pushes the first and last items to the edges */
         align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .site-header {
+        position: fixed; /* This makes the header "stick" to the viewport */
+        top: 0; /* Positions the sticky header at the very top of the screen */
+        width: 100%;
+        z-index: 999; /* Ensures the header stays on top of other content */
+        /* Optional: Add a subtle shadow for a better visual effect */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .site-header nav ul {
@@ -270,14 +291,56 @@ section {
     }
 
     .logo {
-        flex-direction: column; /* Stacks the logo and text vertically on mobile */
-        text-align: center;
+        display: flex;
+        align-items: center; /* Vertically aligns logo and text */
+        flex-direction: row; /* Aligns logo and text side-by-side */
+        text-align: left;
     }
 
     .logo h1 {
         font-size: 1rem;
-        margin-left: 0;
-        margin-top: 5px; /* Adds a small margin below the logo */
+        margin-left: 10px; /* Adds space between logo and text */
+        margin-top: 0;
+        line-height: 1.2; /* Tightens the spacing for two lines */
+        max-width: 150px; /* Limits the width to force text wrap */
+    }
+
+    /* Hide regular menu on mobile */
+    .site-header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+        position: absolute;
+        top: 100%; /* Adjust this to sit below your header */
+        left: 0;
+        z-index: 10;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Show the menu when the 'active' class is present */
+    .site-header nav.active {
+        display: flex;
+    }
+
+    /* Hamburger menu button styling */
+    .hamburger-menu {
+        display: block; /* Show on mobile */
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    /* The three lines of the hamburger icon */
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 5px 0;
+        transition: transform 0.3s ease-in-out;
     }
 
 }
