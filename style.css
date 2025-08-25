@@ -36,6 +36,11 @@ body {
     flex-wrap: wrap;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
     height: 90px;
     width: 90px;
@@ -43,6 +48,13 @@ body {
     border-radius: 50%;
     border: 3px solid var(--primary-color);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-left: 15px; /* Adds space between the logo and the text */
+    font-weight: bold;
 }
 
 .site-header nav ul {
@@ -256,6 +268,18 @@ section {
     .menu-item img {
         height: 200px;
     }
+
+    .logo {
+        flex-direction: column; /* Stacks the logo and text vertically on mobile */
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 1rem;
+        margin-left: 0;
+        margin-top: 5px; /* Adds a small margin below the logo */
+    }
+
 }
 
 @media (max-width: 480px) {
